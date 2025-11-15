@@ -1,0 +1,100 @@
+body{
+    background-color: antiquewhite;
+    color: brown;
+    text-align: center;
+
+}
+h2,h3{
+    color: black;
+}
+/* Contenedor del calendario */
+.calendario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* espacio entre estampillas */
+  justify-content: center;
+  padding: 20px;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+/* Cada día */
+.dia {
+  width: 12vw;
+  height: 12vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 3.5rem;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: brown;
+
+  /* Estilo estampilla dentada */
+  border-radius: 15px;
+  clip-path: polygon(
+    5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%
+  );
+
+  /* Sombra para efecto 3D */
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Hover divertido */
+.dia:hover {
+  transform: translateY(-15px) rotate(-4deg);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+  border-color: rgb(14, 120, 53);
+border-style: solid;
+border-width: 2px;
+}
+
+
+
+/* Rotación aleatoria sutil para cada estampilla */
+.dia:nth-child(odd) {
+  transform: rotate(-5deg);
+}
+.dia:nth-child(even) {
+  transform: rotate(4deg);
+}
+
+/* Modal básico */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+#close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
