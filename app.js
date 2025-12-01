@@ -57,7 +57,7 @@ close.addEventListener("click", () => {
 });
 
 const hoy = new Date();
-const diaActual =hoy.getdate(); // número del día
+const diaActual =hoy.getDate(); // número del día
 
 const dias = document.querySelectorAll(".dia");
 
@@ -117,6 +117,7 @@ const deco = document.createElement("span");
   }
 
   generateSnow();
+
 
 
 
