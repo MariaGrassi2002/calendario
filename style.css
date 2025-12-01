@@ -1,3 +1,4 @@
+html{overflow: hidden; }
 body{
    background-color:#540002;
     color: rgb(255, 255, 255);
@@ -262,5 +263,6 @@ footer{
 }
 
 }
+
 
 
