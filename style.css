@@ -231,6 +231,9 @@ footer{
 .head{padding-right: 10vw;}
 }
 @media (max-width:724px){
+   body{
+      overflow: hidden; 
+   }
   main{
 display: block; padding: 0;
   }
@@ -259,4 +262,5 @@ footer{
 }
 
 }
+
 
