@@ -22,7 +22,8 @@ const desafios = [
   "💫 Día 21 – Tarjeta animada con un click: Haz que al hacer click, tu tarjeta tenga un efecto de animación.",
   "⏳ Día 22 – Cuenta regresiva: Agrega un temporizador dentro de la tarjeta.",
   "🎉 Día 23 – Lluvia de confetti: Crea un pequeño confetti que caiga al hacer click.",
-  "🌟 Día 24 – Tarjeta final de Navidad: Combina animaciones, cambios de fondo y un mensaje que sorprenda."
+  "🌟 Día 24 – Tarjeta final de Navidad: Combina animaciones, cambios de fondo y un mensaje que sorprenda.",
+  "Dia 25 dedicale tu tarjeta navideña a un ser querido"
 ];
 
 // Referencias al DOM
@@ -39,16 +40,83 @@ desafios.forEach((texto, index) => {
   dia.dataset.dia = index + 1;
   dia.textContent = index + 1;
   calendario.appendChild(dia);
+  
 
   // Click para abrir modal
   dia.addEventListener("click", () => {
+     if (index + 1 <= diaActual) {
     titulo.textContent = `Día ${index + 1}`;
     descripcion.textContent = texto;
     modal.classList.remove("hidden");
-  });
+ } });
 });
 
 // Cerrar modal
 close.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
+
+const hoy = new Date();
+const diaActual =15; // número del día
+
+const dias = document.querySelectorAll(".dia");
+
+dias.forEach((div, index) => {
+  const iconos = ["🤗","💝","💟","❣️","👼","🎅","🤶","🧝","🧝‍♂️","🧝‍♀️","👨‍👩‍👧‍👦","⛪","🌨️","❄️","☃️","⛄","🔥","🎄","🎆","🎇","✨","🎁","🧦","🔔","🕯️","✝️","☦️","🎅🏻","🎅🏼","🎅🏽","🎅🏾","🎅🏿","🤶🏻","🤶🏼","🤶🏽","🤶🏾","🤶🏿", "⭐", "⛄", "🎁", "🔔", "✨", "🧦", "🎀"];
+  const numero = index + 1; // porque index empieza en 0
+  if (numero <= diaActual) {
+     const icono = iconos[Math.floor(Math.random() * iconos.length)];
+const deco = document.createElement("span");
+    deco.classList.add("deco");
+    deco.textContent = icono;
+    div.textContent=" "
+    div.appendChild(deco);
+    div.classList.add("habilitado");
+  } else {
+    div.classList.add("deshabilitado");
+  }
+});
+
+  function createSnowflake() {
+    const snowflake = Object.assign(
+      document.createElement('div'),
+      {
+        className: 'snowflake',
+        style: `
+        left: ${Math.random() * innerWidth}px;
+        top: -5px;
+        opacity: ${Math.random()};
+        transform: scale(${Math.random() * 1.5 + 0.5});`
+      }
+    )
+
+    document.body.appendChild(snowflake);
+
+    let posY = -5;
+    let speed = Math.random() * 2 + 1;
+    let wobble = 0;
+
+    function fall() {
+      posY += speed;
+      wobble += 0.02;
+      snowflake.style.top = posY + 'px';
+      snowflake.style.left =
+        parseFloat(snowflake.style.left) +
+        Math.sin(wobble) * 2 + 'px';
+
+      posY < innerHeight
+        ? requestAnimationFrame(fall)
+        : snowflake.remove();
+    }
+
+    fall();
+  }
+
+  function generateSnow() {
+    setInterval(createSnowflake, 100);
+  }
+
+  generateSnow();
+
+
+

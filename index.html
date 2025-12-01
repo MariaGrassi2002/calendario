@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Antic+Didone&family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <header>
-        <h1>Desafios navideños</h1>
-        <h2>¿Sabés algo de HTML y CSS y querés ponerlo a prueba?</h2>
-        <h3>Este calendario es para vos: <br>
-      Cada día un mini desafío navideño para crear, animar y divertirte con la web.</h3>
-    </header>
 
     <main>
-        <div class="calendario"></div>
+          <header>
+        <h1>Desafios Navideños</h1>
+        <p>¿Sabés algo de  <strong>HTML</strong> y <strong> CSS </strong> y querés ponerlo a prueba?</p>
+        <h3>Este calendario es para vos! <br>
+      Cada día un mini desafío navideño para crear, animar y divertirte con la web.</h3>
+    </header>
+     
+     
+  
+        <div class="calendario">
+           
+        </div>
 
         <div id="modal" class="modal hidden">
     <div class="modal-content">
@@ -23,10 +32,23 @@
       <h2 id="titulo-dia"></h2>
       <p id="descripcion"></p>
     </div>
+
   </div>
 
- 
+   <div class="nieve"></div>
     </main>
+    <footer> 
+      <svg viewBox="0 0 1900 400" preserveAspectRatio="xMidYMid meet" class="onda-svg" role="img">
+  <path d="M 0 250 
+           Q 300 0 900 250 
+           
+           T 1900 150 
+           "
+   
+        fill="none" />
+</svg>
+
+    </footer>
  <script src="app.js"></script>
 </body>
 </html>
